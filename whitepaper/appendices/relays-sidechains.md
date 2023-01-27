@@ -1,0 +1,7 @@
+# Relays/Sidechains
+
+Another prominent strategy to achieve atomic cross-chain swaps is based on relays/sidechains. Relays are abstractions (often a smart contract or a script) deployed on some chain A with light client-like verification capabilities over chain B [\[14\]](../references.md#14-l-eonard-lys-arthur-micoulet-and-maria-potop-butucaru.-r-swap-relay-based-atomic-cross-chain-swap). The functioning of sidechains is similar to that of relays in the sense that every sidechain $$x_{i}$$ can read and verify the information on the main chain $$x_{main}$$. The block data is passed on to the sidechain for each new block appended to the main chain. The sidechain itself implements the standard verification mechanism of the mainchain’s consensus algorithm and can therefore verify the block’s validity. Cosmos and Polkadot are two of the most active projects using this technology to achieve cross-chain interoperability.&#x20;
+
+### Drawbacks
+
+One major drawback with sidechain implementations is that they typically only have support for cross-chain asset transfers and do not allow for arbitrary message transfers, limiting their ability to empower more complex applications [\[12\]](../references.md#12-rafael-belchior-andr-e-vasconcelos-s-ergio-guerreiro-and-miguel-correia.-a-survey-on-blockchain-i). Another issue with sidechain-based projects is that the inconsistency of consensus rates between different blockchains can impact the validity of cross-chain transactions.

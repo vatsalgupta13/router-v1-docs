@@ -1,0 +1,7 @@
+# Event Handlers
+
+Function calls from ParaRouters are delegated to handler contracts to ensure that the bridge remains modular. These contracts allow for customizable behavior upon receiving transactions from the ParaRouter. For example, the ParaRouter will delegate the deposit call to lock ERC20 assets on the source chain and executeProposal call to unlock ERC20 assets on the destination chain to a dedicated ERC20 handler. Each handler can handle multiple resources (for example, tokens) provided their contract addresses are registered with the handler. Currently, Router supports one handler - ERC20 handler for fungible assets, but two new handlers, ERC721 handler for non-fungible assets and a generic handler for arbitrary data, will be added soon. Router Protocol uses its handlers via a proxy contract implementation to ensure they remain upgradeable. Support for more handlers can also be added in the future.
+
+* **ERC20 Handler:** This handler is responsible for transferring ERC20 assets. ERC20 handler contract can lock up (or burn) tokens on a deposit call and release (or mint) tokens on an executeProposal call. To burn and mint tokens, the handler needs to have sufficient privileges.
+* **ERC721 Handler:** This contract will handle the transfer of ERC721 assets.&#x20;
+* **Generic Handler:** This contract will allow for the propagation of messages from one chain to the other. A deposit call initiates the transfer of a message, while the executeProposal call passes the metadata to the specified execution function.
