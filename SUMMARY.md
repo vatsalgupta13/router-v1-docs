@@ -70,6 +70,7 @@
 
 ## Reference
 
+* [Treasury](reference/treasury.md)
 * [Contract Addresses](reference/contract-addresses/README.md)
   * [BSC](reference/contract-addresses/bsc.md)
   * [Avalanche](reference/contract-addresses/avalanche.md)
